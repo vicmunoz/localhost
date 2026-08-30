@@ -1,0 +1,33 @@
+# Starship configuration - https://starship.rs/config/
+
+[git_commit]
+tag_disabled = false
+
+[git_status]
+conflicted = "🏳"
+ahead = "🏎💨"
+behind = "😰"
+diverged = "😵"
+up_to_date = "✓"
+untracked = "🤷"
+stashed = "📦"
+modified = "🏗"
+staged = '[++\($count\)](green)'
+renamed = "👅"
+deleted = "🗑"
+
+[kubernetes]
+format = 'on [☸️  $context \($namespace\)](dimmed green) '
+disabled = true
+[kubernetes.context_aliases]
+"docker-desktop.*" = "dev"
+# "dev.local.cluster.k8s" = "dev"
+# ".*/openshift-cluster/.*" = "openshift"
+# "gke_.*_(?P<cluster>[\\w-]+)" = "gke-$cluster"
+
+[python]
+disabled = false
+
+[aws]
+disabled = true
+
