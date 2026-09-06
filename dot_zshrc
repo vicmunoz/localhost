@@ -16,34 +16,6 @@ bindkey -e
 # Initialize starship prompt
 eval "$(starship init zsh)"
 
-# Aliases definitions
-# >>> PENDING TO IMPLEMENT !!!
-# source ~/.zsh_aliases
-
-# Enable direnv
-# >>> PENDING TO IMPLEMENT !!!
-# Not sure if needed
-# eval "$(direnv hook zsh)"
-
-# Enable zsh plugins (calling compinit)
-# >>> PENDING TO IMPLEMENT !!!
-# source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-# source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-# source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# Custom complete order, demote expansions tag, so they only show if nothing else matches
-# >>> PENDING TO IMPLEMENT !!!
-# zstyle ':completion:*' tag-order '! expansions' 'expansions'
-
-# Functions defintions
-# >>> PENDING TO IMPLEMENT !!!
-# source ~/.zsh_functions
-
-# Key bindings definitions (load after plugins to avoid conflicts)
-# >>> PENDING TO IMPLEMENT !!!
-# source ~/.zsh_keybindings
-
-
 
 ####################
 # History settings #
@@ -70,16 +42,4 @@ setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # By default zsh fzf integration displays history starting from bottom, we want reverse search display from top to bottom
 export FZF_CTRL_R_OPTS="--layout=reverse"
-
-# Enable zoxide
-# >>> PENDING TO IMPLEMENT !!!
-# eval "$(zoxide init zsh)"
-
-
-########################
-# Custom env vars VIC_ #
-########################
-# >>> PENDING TO IMPLEMENT !!!
-# typeset -ga VIC_AI_TOOLS=(codex claudecode mistral copilot gemini)   -->> to include gemini
-# typeset -ga VIC_AI_TOOLS=(codex claudecode mistral copilot)
 
