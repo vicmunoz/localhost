@@ -1,0 +1,85 @@
+# code: language=shellscript
+# shellcheck disable=all
+# Linter shellcheck doesn't support zsh syntax
+
+###############################
+# ZSH reference configuration #
+###############################
+
+# NeoVim as default
+export EDITOR=nvim
+export VISUAL=nvim
+
+# Emacs key bindings
+bindkey -e
+
+# Initialize starship prompt
+eval "$(starship init zsh)"
+
+# Aliases definitions
+# >>> PENDING TO IMPLEMENT !!!
+# source ~/.zsh_aliases
+
+# Enable direnv
+# >>> PENDING TO IMPLEMENT !!!
+# Not sure if needed
+# eval "$(direnv hook zsh)"
+
+# Enable zsh plugins (calling compinit)
+# >>> PENDING TO IMPLEMENT !!!
+# source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+# source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Custom complete order, demote expansions tag, so they only show if nothing else matches
+# >>> PENDING TO IMPLEMENT !!!
+# zstyle ':completion:*' tag-order '! expansions' 'expansions'
+
+# Functions defintions
+# >>> PENDING TO IMPLEMENT !!!
+# source ~/.zsh_functions
+
+# Key bindings definitions (load after plugins to avoid conflicts)
+# >>> PENDING TO IMPLEMENT !!!
+# source ~/.zsh_keybindings
+
+
+
+####################
+# History settings #
+####################
+export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=10000000
+SAVEHIST=10000000                # Zsh uses SAVEHIST variable instead of Bash HISTFILESIZE
+setopt BANG_HIST                 # Treat the '!' character specially during expansion.
+setopt EXTENDED_HISTORY          # Write the history file in the ":start:elapsed;command" format.
+setopt INC_APPEND_HISTORY        # Write to the history file immediately, not when the shell exits.
+setopt SHARE_HISTORY             # Share history between all sessions.
+setopt HIST_EXPIRE_DUPS_FIRST    # Expire duplicate entries first when trimming history.
+setopt HIST_IGNORE_DUPS          # Don't record an entry that was just recorded again.
+# setopt HIST_IGNORE_ALL_DUPS      # Delete old recorded entry if new entry is a duplicate.
+setopt HIST_FIND_NO_DUPS         # Do not display a line previously found.
+# setopt HIST_IGNORE_SPACE         # Don't record an entry starting with a space.
+setopt HIST_SAVE_NO_DUPS         # Don't write duplicate entries in the history file.
+setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording entry.
+setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
+setopt HIST_BEEP                 # Beep when accessing nonexistent history.
+
+# Load fzf settings for command history search
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# By default zsh fzf integration displays history starting from bottom, we want reverse search display from top to bottom
+export FZF_CTRL_R_OPTS="--layout=reverse"
+
+# Enable zoxide
+# >>> PENDING TO IMPLEMENT !!!
+# eval "$(zoxide init zsh)"
+
+
+########################
+# Custom env vars VIC_ #
+########################
+# >>> PENDING TO IMPLEMENT !!!
+# typeset -ga VIC_AI_TOOLS=(codex claudecode mistral copilot gemini)   -->> to include gemini
+# typeset -ga VIC_AI_TOOLS=(codex claudecode mistral copilot)
+
