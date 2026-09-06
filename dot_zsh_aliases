@@ -18,8 +18,8 @@ alias cat='bat'
 alias cz='chezmoi'
 # alias catjson - see .zsh_functions
 alias grep='grep --color=always'
-alias ll='lsd -l'
-alias ls='lsd'
+alias ll='eza -l'
+alias ls='eza'
 # alias ping_ssh - see .zsh_functions
 alias sedi='sed -i.sed.bak'
 alias ssh='__kitty_ssh'

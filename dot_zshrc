@@ -46,3 +46,6 @@ setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 # By default zsh fzf integration displays history starting from bottom, we want reverse search display from top to bottom
 export FZF_CTRL_R_OPTS="--layout=reverse"
 
+# Enable zoxide
+eval "$(zoxide init zsh)"
+
