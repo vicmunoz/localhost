@@ -16,6 +16,9 @@ bindkey -e
 # Initialize starship prompt
 eval "$(starship init zsh)"
 
+# Aliases configuration
+source ~/.zsh_aliases
+
 
 ####################
 # History settings #
