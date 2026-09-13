@@ -13,3 +13,6 @@ if [ ! -L "$HOME/Code" ] || [ ! "$(readlink $HOME/Code)" = "$HOME/Work" ]; then
   echo "ERROR: $HOME/Code doesn't exist or is not a symlink to $HOME/Work"
   exit 1
 fi
+
+# Ensure $HOME/Documents/logs/ssh directory exists
+mkdir -p "$HOME/Documents/logs/ssh"
