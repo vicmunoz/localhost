@@ -1,0 +1,26 @@
+# code: language=shellscript
+# shellcheck disable=all
+# Linter shellcheck doesn't support zsh syntax
+
+#####################
+# Functions various #
+#####################
+#
+# SSH into a host logging the output with kitty terminal
+# This function is called via alias ssh='__kitty_ssh' in .zsh_aliases
+__kitty_ssh() {
+    kitty +kitten ssh "$@" | tee "$HOME/Documents/logs/ssh/$(date +%Y%m%d%H%M%S).log"
+}
+
+# Backup a simple file/s
+bak() {
+  for i in "$@"; do
+    cp "$i" "$i.bak"
+  done
+}
+
+# Pretty print filter for json files
+catjson() {
+    bat "$@" | json_pp | bat -l json
+}
+

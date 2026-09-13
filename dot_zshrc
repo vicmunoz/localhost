@@ -19,6 +19,8 @@ eval "$(starship init zsh)"
 # Aliases configuration
 source ~/.zsh_aliases
 
+# Functions defintions
+source ~/.zsh_functions
 
 ####################
 # History settings #
