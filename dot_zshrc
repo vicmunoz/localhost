@@ -51,3 +51,13 @@ export FZF_CTRL_R_OPTS="--layout=reverse"
 # Enable zoxide
 eval "$(zoxide init zsh)"
 
+# Enable try (https://github.com/tobi/try)
+eval "$(try init ~/Work/tries)"
+
+# Add ssh keys into each shell session
+if [ -z "$SSH_AUTH_SOCK" ]; then
+  eval $(ssh-agent -s)
+  ssh-add ~/.ssh/vmunoz_github
+  ssh-add ~/.ssh/vmunoz_gitlab
+fi
+
