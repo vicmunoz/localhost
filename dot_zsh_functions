@@ -24,3 +24,13 @@ catjson() {
     bat "$@" | json_pp | bat -l json
 }
 
+# Move up a certain number of directories
+up() {
+  if [ "$#" -gt 0 ]; then
+    for _ in $(seq 1 "$1"); do
+      cd ..
+    done
+  else
+    cd ..
+  fi
+}
