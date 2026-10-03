@@ -61,3 +61,8 @@ if [ -z "$SSH_AUTH_SOCK" ]; then
   ssh-add ~/.ssh/vmunoz_gitlab
 fi
 
+# Load private configuration if defined
+if [ -f ~/.zsh_private ]; then
+  source ~/.zsh_private
+fi
+
