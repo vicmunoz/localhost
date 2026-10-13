@@ -1,6 +1,7 @@
 #! /bin/sh
-
 # Check filesystem layout is properly defined
+
+echo "Checking localhost filesystem layout..."
 
 # Check Work folder exists in HOME
 if [ ! -d "$HOME/Work" ]; then
@@ -16,3 +17,12 @@ fi
 
 # Ensure $HOME/Documents/logs/ssh directory exists
 mkdir -p "$HOME/Documents/logs/ssh"
+# Ensure $HOME/.local/share/fonts directory exists
+mkdir -p "$HOME/.local/share/fonts"
+
+# Macos custom filesystem layout
+if [ "$(uname -s)" = "Darwin"]; then
+  mkdir -p "$HOME/Library/Fonts"
+fi
+
+# localhost file
