@@ -1,5 +1,9 @@
 # Starship configuration - https://starship.rs/config/
 
+[directory]
+truncation_length = 4
+truncate_to_repo = false
+
 [git_commit]
 tag_disabled = false
 
@@ -31,3 +35,4 @@ disabled = false
 [aws]
 disabled = true
 
+# localhost file
