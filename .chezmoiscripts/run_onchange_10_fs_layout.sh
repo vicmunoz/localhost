@@ -21,7 +21,7 @@ mkdir -p "$HOME/Documents/logs/ssh"
 mkdir -p "$HOME/.local/share/fonts"
 
 # Macos custom filesystem layout
-if [ "$(uname -s)" = "Darwin"]; then
+if [ "$(uname -s)" = "Darwin" ]; then
   mkdir -p "$HOME/Library/Fonts"
 fi
 
