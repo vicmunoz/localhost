@@ -1,0 +1,33 @@
+# Herdr custom configuration file
+
+onboarding = false
+
+[ui]
+copy_on_select = true
+prompt_new_tab_name = false
+confirm_close = true            # Workspace closure confirmation, not every pane/tab.
+
+[keys]
+detach = ["ctrl+alt+shift+super+w"]
+toggle_sidebar = ["super+shift+b", "prefix+b"]
+# Pane management
+zoom = ["ctrl+alt+shift+super+d", "prefix+z"]
+cycle_pane_previous = ["ctrl+alt+shift+super+j", "prefix+shift+tab"]
+cycle_pane_next = ["ctrl+alt+shift+super+k", "prefix+tab"]
+split_vertical = ["ctrl+alt+shift+super+backslash", "prefix+v"]
+split_horizontal = ["ctrl+alt+shift+super+minus", "prefix+minus"]
+# Tab management
+new_tab = ["ctrl+alt+shift+super+t", "prefix+c"]
+next_tab = "ctrl+shift+super+]"
+previous_tab = "ctrl+shift+super+["
+rename_tab = ["super+shift+t", "prefix+shift+t"]
+# Workspace management
+new_workspace = ["super+shift+n", "prefix+shift+n"]
+close_workspace = ["super+shift+d", "prefix+shift+d"]
+rename_workspace = ["super+shift+r", "prefix+shift+w"]
+previous_workspace = ["ctrl+alt+shift+super+h"]
+next_workspace = ["ctrl+alt+shift+super+l"]
+# Agent management
+focus_agent = ["super+1..9"]
+
+# localhost file
