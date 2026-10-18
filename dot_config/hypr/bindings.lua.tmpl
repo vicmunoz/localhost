@@ -29,43 +29,61 @@
 -- o.bind("SUPER + H", nil, "voxtype record toggle")
 -- o.bind("SUPER + PERIOD", nil, "omarchy-shell shell toggle omarchy.emojis")
 
+-- ------------
+-- Magical Keys
+-- ------------
+-- Main os/application automation modifier, used as kitty terminal modifier (SUPER + CTRL + ALT + SHIFT)
+local modHyper = "SUPER + CTRL + ALT + SHIFT"
+-- Secondary automation modifier, used as tiling manager second modifier (CTRL + ALT + SHIFT)
+local modMeh = "CTRL + ALT + SHIFT"
+-- Main tiling manager modifier (ALT + SHIFT)
+local modTil = "ALT + SHIFT"
+
 -- ---------------
 -- Custom bindings
 -- ---------------
--- Unbind Google applications
--- omarchy defaults are in /usr/share/omarchy/default/hypr/bindings/applications.lua
-hl.unbind("SUPER + SHIFT + CTRL + G")
-hl.unbind("SUPER + SHIFT + P")
-hl.unbind("SUPER + SHIFT + S")
+-- Replace close os app/window shortcut
+hl.unbind("SUPER + W")
+o.bind("SUPER + Q", "Close window", hl.dsp.window.close())
 
 -- Align lock system binding with macos
 hl.unbind("SUPER + CTRL + Q")
 hl.unbind("SUPER + CTRL + L")
 o.bind("SUPER + CTRL + Q", "Lock system", "omarchy-system-lock")
 
--- Align tiling bindings with macos
--- omarchy defaults are in /usr/share/omarchy/default/hypr/bindings/tiling.lua
+-- Unbind Google applications. Omarchy defaults are in /usr/share/omarchy/default/hypr/bindings/applications.lua
+hl.unbind("SUPER + SHIFT + CTRL + G")
+hl.unbind("SUPER + SHIFT + P")
+hl.unbind("SUPER + SHIFT + S")
+
+-- Unbind tiling layouts not in use
+hl.unbind("SUPER + T")
+hl.unbind("SUPER + L")
+
+-- Align tiling bindings with macos. Omarchy defaults are in /usr/share/omarchy/default/hypr/bindings/tiling.lua
+o.bind(modTil .. " + A", "Toogle master layout", hl.dsp.layout("master"))
+
 for workspace = 1, 10 do
   local key = "code:" .. tostring(workspace + 9)
   hl.unbind("SUPER + " .. key)
-  o.bind("SUPER + CTRL + SHIFT + ALT + " .. key, "Switch to workspace " .. workspace, hl.dsp.focus({ workspace = tostring(workspace) }))
+  o.bind(modHyper .. " + " .. key, "Switch to workspace " .. workspace, hl.dsp.focus({ workspace = tostring(workspace) }))
   hl.unbind("SUPER + SHIFT + " .. key)
-  o.bind("CTRL + SHIFT + ALT + " .. key, "Move window to workspace " .. workspace, hl.dsp.window.move({ workspace = tostring(workspace) }))
+  o.bind(modMeh .. " + " .. key, "Move window to workspace " .. workspace, hl.dsp.window.move({ workspace = tostring(workspace) }))
   hl.unbind("SUPER + SHIFT + ALT + " .. key)
 end
 
 hl.unbind("ALT + TAB")
-o.bind("ALT + SHIFT + K", "Focus on next window", hl.dsp.window.cycle_next())
-hl.unbind("ALT + SHIFT + TAB")
-o.bind("ALT + SHIFT + J", "Focus on previous window", hl.dsp.window.cycle_next({ next = false }))
+o.bind(modTil .. " + K", "Focus on next window", hl.dsp.window.cycle_next())
+hl.unbind(modTil .. " + TAB")
+o.bind(modTil .. " + J", "Focus on previous window", hl.dsp.window.cycle_next({ next = false }))
 
 -- above not working - requires debugging
---o.bind("CTRL + SHIFT + ALT + RIGHT", "Move window to next workspace", hl.dsp.window.move({ workspace = "e+1" }))
---o.bind("CTRL + SHIFT + ALT + LEFT", "Move window to previous workspace", hl.dsp.window.move({ workspace = "e-1" }))
+--o.bind(modMeh .. " + RIGHT", "Move window to next workspace", hl.dsp.window.move({ workspace = "e+1" }))
+--o.bind(modMeh .. " + LEFT", "Move window to previous workspace", hl.dsp.window.move({ workspace = "e-1" }))
 --hl.unbind("SUPER + TAB")
---o.bind("SUPER + CTRL + SHIFT + ALT + RIGHT", "Next workspace", hl.dsp.focus({ workspace = "e+1" }))
+--o.bind(modHyper .. " + RIGHT", "Next workspace", hl.dsp.focus({ workspace = "e+1" }))
 --hl.unbind("SUPER + SHIFT + TAB")
---o.bind("SUPER + CTRL + SHIFT + ALT + LEFT", "Previous workspace", hl.dsp.focus({ workspace = "e-1" }))
+--o.bind(modHyper .. " + LEFT", "Previous workspace", hl.dsp.focus({ workspace = "e-1" }))
 
 {{ else if eq .chezmoi.os "darwin" }}
 -- hyperland configuration do not apply to macos
