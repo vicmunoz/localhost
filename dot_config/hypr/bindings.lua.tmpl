@@ -56,10 +56,6 @@ hl.unbind("SUPER + SHIFT + CTRL + G")
 hl.unbind("SUPER + SHIFT + P")
 hl.unbind("SUPER + SHIFT + S")
 
--- Unbind tiling layouts not in use
-hl.unbind("SUPER + T")
-hl.unbind("SUPER + L")
-
 -- Align tiling bindings with macos. Omarchy defaults are in /usr/share/omarchy/default/hypr/bindings/tiling.lua
 -- Move accross workspaces/spaces and move windows accross
 for workspace = 1, 10 do
@@ -80,6 +76,14 @@ hl.unbind("ALT + TAB")
 o.bind(modTil .. " + K", "Focus on next window", hl.dsp.window.cycle_next())
 hl.unbind(modTil .. " + TAB")
 o.bind(modTil .. " + J", "Focus on previous window", hl.dsp.window.cycle_next({ next = false }))
+
+-- Unbind tiling layouts not in use
+hl.unbind("SUPER + T")
+hl.unbind("SUPER + L")
+
+-- Aling tiling layouts bindings with macos (amethyst) 
+hl.unbind("SUPER + F")
+o.bind(modTil .. " + D", "Full screen", hl.dsp.window.fullscreen({ mode = "fullscreen" }))
 
 -- Below is not working - debug WIP
 -- o.bind(modTil .. " + A", "Toogle master layout", hl.dsp.layout("master"))
