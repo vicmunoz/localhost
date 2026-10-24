@@ -29,6 +29,21 @@
 -- o.bind("SUPER + H", nil, "voxtype record toggle")
 -- o.bind("SUPER + PERIOD", nil, "omarchy-shell shell toggle omarchy.emojis")
 
+-- -------
+-- Helpers
+-- -------
+local function setLayout(layout)
+    return function()
+        local ws = hl.get_active_special_workspace() or hl.get_active_workspace()
+        if not ws then return end
+
+        hl.workspace_rule({
+            workspace = ws.special and tostring(ws.name) or "name:" .. tostring(ws.name),
+            layout = layout,
+        })
+    end
+end
+
 -- ------------
 -- Magical Keys
 -- ------------
@@ -56,7 +71,8 @@ hl.unbind("SUPER + SHIFT + CTRL + G")
 hl.unbind("SUPER + SHIFT + P")
 hl.unbind("SUPER + SHIFT + S")
 
--- Align tiling bindings with macos. Omarchy defaults are in /usr/share/omarchy/default/hypr/bindings/tiling.lua
+-- Align tiling bindings with macos. Amethyst / Hyperland
+-- Omarchy defaults are in /usr/share/omarchy/default/hypr/bindings/tiling.lua
 -- Move accross workspaces/spaces and move windows accross
 for workspace = 1, 10 do
   local key = "code:" .. tostring(workspace + 9)
@@ -70,23 +86,29 @@ hl.unbind("SUPER + TAB")
 o.bind(modHyper .. " + RIGHT", "Next workspace", hl.dsp.focus({ workspace = "e+1" }))
 hl.unbind("SUPER + SHIFT + TAB")
 o.bind(modHyper .. " + LEFT", "Previous workspace", hl.dsp.focus({ workspace = "e-1" }))
+-- Move and swap windows
 o.bind(modMeh .. " + RIGHT", "Move window to next workspace", hl.dsp.window.move({ workspace = "e+1" }))
 o.bind(modMeh .. " + LEFT", "Move window to previous workspace", hl.dsp.window.move({ workspace = "e-1" }))
 hl.unbind("ALT + TAB")
 o.bind(modTil .. " + K", "Focus on next window", hl.dsp.window.cycle_next())
 hl.unbind(modTil .. " + TAB")
 o.bind(modTil .. " + J", "Focus on previous window", hl.dsp.window.cycle_next({ next = false }))
+o.bind(modMeh .. " + K", "Swap focused window with next", hl.dsp.layout("swapnext"))
+o.bind(modMeh .. " + J", "Swap focused window with previous", hl.dsp.layout("swapprev"))
+o.bind(modTil .. " + RETURN", "Swap focused window with master", hl.dsp.layout("swapwithmaster"))
+-- Shrink and expand main window size
+o.bind(modTil .. " + H", "Shrink main window", hl.dsp.layout("mfact -0.05"))
+o.bind(modTil .. " + L", "Expand main window", hl.dsp.layout("mfact +0.05"))
 
 -- Unbind tiling layouts not in use
 hl.unbind("SUPER + T")
 hl.unbind("SUPER + L")
 
 -- Aling tiling layouts bindings with macos (amethyst) 
+o.bind(modTil .. " + A", "Master layout", setLayout("master"))
+o.bind(modTil .. " + S", "Dwindle layout", setLayout("dwindle"))
 hl.unbind("SUPER + F")
 o.bind(modTil .. " + D", "Full screen", hl.dsp.window.fullscreen({ mode = "fullscreen" }))
-
--- Below is not working - debug WIP
--- o.bind(modTil .. " + A", "Toogle master layout", hl.dsp.layout("master"))
 
 {{ else if eq .chezmoi.os "darwin" }}
 -- hyperland configuration do not apply to macos
