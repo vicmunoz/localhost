@@ -5,12 +5,15 @@
 hl.config({
   general = {
     -- No gaps between windows or borders.
-    gaps_in = 0,
-    gaps_out = 0,
-    border_size = 0,
-
+    gaps_in = 5,
+    gaps_out = 10,
+    border_size = 2,
     layout = "master",
   },
+  master = {
+      -- New windows are added to slave stack.
+      new_status = "slave",
+    },
 })
 
 -- https://wiki.hypr.land/Configuring/Basics/Variables/#decoration
