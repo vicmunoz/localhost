@@ -104,11 +104,12 @@ o.bind(modTil .. " + L", "Expand main window", hl.dsp.layout("mfact +0.05"))
 hl.unbind("SUPER + T")
 hl.unbind("SUPER + L")
 
--- Aling tiling layouts bindings with macos (amethyst) 
+-- Aling tiling layouts bindings with macos
 o.bind(modTil .. " + A", "Master layout", setLayout("master"))
 o.bind(modTil .. " + S", "Dwindle layout", setLayout("dwindle"))
 hl.unbind("SUPER + F")
 o.bind(modTil .. " + D", "Full screen", hl.dsp.window.fullscreen({ mode = "fullscreen" }))
+o.bind(modTil .. " + F", "Scrolling layout", setLayout("scrolling"))
 
 {{ else if eq .chezmoi.os "darwin" }}
 -- hyperland configuration do not apply to macos
