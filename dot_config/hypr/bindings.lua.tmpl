@@ -73,6 +73,7 @@ hl.unbind("SUPER + SHIFT + S")
 
 -- Align tiling bindings with macos. Amethyst / Hyperland
 -- Omarchy defaults are in /usr/share/omarchy/default/hypr/bindings/tiling.lua
+o.bind(modTil .. " + R", "Hyperland reload", "hyprctl reload")
 -- Move accross workspaces/spaces and move windows accross
 for workspace = 1, 10 do
   local key = "code:" .. tostring(workspace + 9)
