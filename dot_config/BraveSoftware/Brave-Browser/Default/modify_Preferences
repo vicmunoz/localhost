@@ -1,0 +1,59 @@
+#!/usr/bin/bash
+
+# This script is replacing Brave shortcuts in json file
+# Aligning with macOS Brave shortcuts
+
+# Set command shortcut (brave accelerator)
+# Commands IDs are inherited from chromium
+# See chrome/app/chrome_command_ids.h
+
+# New window            - IDC_NEW_WINDOW            - 34000
+# New Private window    - IDC_NEW_INCOGNITO_WINDOW  - 34001
+# New tab               - IDC_NEW_TAB               - 34014
+# Close tab             - IDC_CLOSE_TAB             - 34015
+# Next tab              - IDC_SELECT_NEXT_TAB       - 34016
+# Previous tab          - IDC_SELECT_PREVIOUS_TAB   - 34017
+# Select tab 0          - IDC_SELECT_TAB_0          - 34018
+# Select tab 1          - IDC_SELECT_TAB_1          - 34019
+# Select tab 2          - IDC_SELECT_TAB_2          - 34020
+# Select tab 3          - IDC_SELECT_TAB_3          - 34021
+# Select tab 4          - IDC_SELECT_TAB_4          - 34022
+# Select tab 5          - IDC_SELECT_TAB_5          - 34023
+# Select tab 6          - IDC_SELECT_TAB_6          - 34024
+# Select tab 7          - IDC_SELECT_TAB_7          - 34025
+# Select last tab       - IDC_SELECT_LAST_TAB       - 34026
+# Reopen closed tab     - IDC_RESTORE_TAB           - 34028
+# Cycle to next tab     - IDC_CYCLE_TO_NEXT_TAB     - 34062
+# Cycle to previous tab - IDC_CYCLE_TO_PREV_TAB     - 34063
+# Bookmark this tab     - IDC_BOOKMARK_THIS_TAB     - 35000
+# Find                  - IDC_FIND                  - 37000
+# Zoom in               - IDC_ZOOM_PLUS             - 38001
+# Zoom out              - IDC_ZOOM_MINUS            - 38003
+# Focus location        - IDC_FOCUS_LOCATION        - 39001
+# Show history          - IDC_SHOW_HISTORY          - 40010
+
+jq --compact-output '.brave.accelerators."34000" = ["Meta+KeyN"] |
+  .brave.accelerators."34001" = ["Meta+Shift+KeyN"] | 
+  .brave.accelerators."34014" = ["Meta+KeyT"] | 
+  .brave.accelerators."34015" = ["Meta+KeyW"] | 
+  .brave.accelerators."34016" = ["Meta+PageDown"] | 
+  .brave.accelerators."34017" = ["Meta+PageUp"] | 
+  .brave.accelerators."34018" = ["Meta+Digit1"] |
+  .brave.accelerators."34019" = ["Meta+Digit2"] |
+  .brave.accelerators."34020" = ["Meta+Digit3"] |
+  .brave.accelerators."34021" = ["Meta+Digit4"] |
+  .brave.accelerators."34022" = ["Meta+Digit5"] |
+  .brave.accelerators."34023" = ["Meta+Digit6"] |
+  .brave.accelerators."34024" = ["Meta+Digit7"] |
+  .brave.accelerators."34025" = ["Meta+Digit8"] |
+  .brave.accelerators."34026" = ["Meta+Digit9"] |
+  .brave.accelerators."34028" = ["Meta+Shift+KeyT"] |
+  .brave.accelerators."34062" = ["Meta+Shift+BracketRight"] |
+  .brave.accelerators."34063" = ["Meta+Shift+BracketLeft"] |
+  .brave.accelerators."35000" = ["Meta+KeyD"] |
+  .brave.accelerators."37000" = ["Meta+KeyF"] |
+  .brave.accelerators."38001" = ["Meta+Shift+Equal"] |
+  .brave.accelerators."38003" = ["Meta+Shift+Minus"] |
+  .brave.accelerators."39001" = ["Meta+KeyL"] |
+  .brave.accelerators."40010" = ["Meta+KeyH"] '
+
