@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 # This script is replacing Brave shortcuts in json file
 # Aligning with macOS Brave shortcuts
@@ -33,11 +33,11 @@
 # Show history          - IDC_SHOW_HISTORY          - 40010
 
 jq --compact-output '.brave.accelerators."34000" = ["Meta+KeyN"] |
-  .brave.accelerators."34001" = ["Meta+Shift+KeyN"] | 
-  .brave.accelerators."34014" = ["Meta+KeyT"] | 
-  .brave.accelerators."34015" = ["Meta+KeyW"] | 
-  .brave.accelerators."34016" = ["Meta+PageDown"] | 
-  .brave.accelerators."34017" = ["Meta+PageUp"] | 
+  .brave.accelerators."34001" = ["Meta+Shift+KeyN"] |
+  .brave.accelerators."34014" = ["Meta+KeyT"] |
+  .brave.accelerators."34015" = ["Meta+KeyW"] |
+  .brave.accelerators."34016" = ["Meta+PageDown"] |
+  .brave.accelerators."34017" = ["Meta+PageUp"] |
   .brave.accelerators."34018" = ["Meta+Digit1"] |
   .brave.accelerators."34019" = ["Meta+Digit2"] |
   .brave.accelerators."34020" = ["Meta+Digit3"] |
@@ -56,4 +56,3 @@ jq --compact-output '.brave.accelerators."34000" = ["Meta+KeyN"] |
   .brave.accelerators."38003" = ["Meta+Shift+Minus"] |
   .brave.accelerators."39001" = ["Meta+KeyL"] |
   .brave.accelerators."40010" = ["Meta+KeyH"] '
-
