@@ -24,9 +24,11 @@ italic_font      JetBrains Mono NL Medium Italic
 bold_italic_font JetBrains Mono NL ExtraBold Italic
 
 #: Font size (in pts)
-
+{{ if eq .chezmoi.os "linux" }}
 font_size 9.0
-
+{{ else if eq .chezmoi.os "darwin" }}
+font_size 15.0
+{{ end }}
 # force_ltr no
 
 #: kitty does not support BIDI (bidirectional text), however, for RTL
