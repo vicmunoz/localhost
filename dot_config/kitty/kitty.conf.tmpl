@@ -2341,4 +2341,32 @@ map --when-focus-on var:herdr=1 kitty_mod+g no_op
 # Intentionally disable these unwanted operations.
 map --when-focus-on var:herdr=1 f1 discard_event
 
+##############################
+# Tuios custom configuration #
+##############################
+
+# Same behavior as Herdr, only main launch binding is different.
+map ctrl+cmd+enter launch --type=tab --tab-title "tuios" --cwd=current --var tuios=1 tuios
+
+map --when-focus-on var:tuios=1 kitty_mod+j no_op
+map --when-focus-on var:tuios=1 kitty_mod+k no_op
+map --when-focus-on var:tuios=1 kitty_mod+h no_op
+map --when-focus-on var:tuios=1 kitty_mod+l no_op
+map --when-focus-on var:tuios=1 kitty_mod+\ no_op
+map --when-focus-on var:tuios=1 kitty_mod+- no_op
+map --when-focus-on var:tuios=1 ctrl+cmd+\ no_op
+map --when-focus-on var:tuios=1 ctrl+cmd+- no_op
+map --when-focus-on var:tuios=1 cmd+shift+\ no_op
+map --when-focus-on var:tuios=1 cmd+shift+- no_op
+map --when-focus-on var:tuios=1 cmd+shift+t no_op
+map --when-focus-on var:tuios=1 kitty_mod+a no_op
+map --when-focus-on var:tuios=1 kitty_mod+s no_op
+map --when-focus-on var:tuios=1 kitty_mod+d no_op
+map --when-focus-on var:tuios=1 kitty_mod+f no_op
+map --when-focus-on var:tuios=1 kitty_mod+g no_op
+
+map --when-focus-on var:tuios=1 f1 discard_event
+
+
+
 # localhost file
