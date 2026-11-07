@@ -1,0 +1,32 @@
+{{ if eq .chezmoi.os "linux" }}
+-- hammerspoon configuration do not apply to linux
+{{ else if eq .chezmoi.os "darwin" }}
+-- Kitty: Open a new OS window or launch Kitty if not running
+hs.hotkey.bind({ "cmd", "shift" }, "return", function()
+  local kitty = hs.application.get("kitty")
+
+  if kitty then
+    kitty:activate()
+    hs.eventtap.keyStroke({ "cmd" }, "n", 0, kitty)
+  else
+    hs.application.launchOrFocus("kitty")
+  end
+end)
+
+-- Brave: Open a new window or launch Brave if not running
+hs.hotkey.bind({ "cmd" }, "return", function()
+  local brave = hs.application.get("Brave Browser")
+
+  if brave then
+    brave:activate()
+    hs.eventtap.keyStroke({ "cmd" }, "n", 0, brave)
+  else
+    hs.application.launchOrFocus("Brave Browser")
+  end
+end)
+
+{{ else }}
+-- ERROR: OS not detected by chezmoi
+{{ end }}
+
+-- localhost file
