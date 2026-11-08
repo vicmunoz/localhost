@@ -1,0 +1,16 @@
+# Herdr TAB -> TUIOS WORKSPACE (9 numbered workspaces per session).
+# Stock TUIOS workspace, window and prefix bindings remain untouched.
+# In particular, Ctrl+B, c is still TUIOS "new window", not "new workspace".
+
+[keybindings.global]
+# Herdr new_tab: Hyper+T; use a currently empty TUIOS workspace.
+new_workspace = ["ctrl+alt+shift+super+t"]
+
+# Herdr previous_tab / next_tab.
+prev_workspace = ["ctrl+shift+super+["]
+next_workspace = ["ctrl+shift+super+]"]
+
+# Herdr rename_tab: Super+Shift+T.
+rename_workspace = ["super+shift+t"]
+
+# localhost file

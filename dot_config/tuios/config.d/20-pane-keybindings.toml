@@ -1,0 +1,27 @@
+# Herdr pane shortcuts mapped to TUIOS actions.
+# Only ADD direct shortcuts in [keybindings.global].
+# Keep ALL stock keys in [keybindings.prefix_mode], [keybindings.terminal_mode],
+# [keybindings.window_management], and [keybindings.layout] untouched.
+# Prefix = Ctrl+B by default in TUIOS.
+
+[keybindings.global]
+# Herdr: toggle_sidebar = ["super+shift+b", "prefix+b"]
+# TUIOS retains its stock Ctrl+B, b.
+prefix_detach = ["ctrl+alt+shift+super+w"]
+prefix_toggle_sidebar = ["super+shift+b"]
+
+# Herdr: zoom = [Hyper+D, "prefix+z"]
+# TUIOS retains its stock Ctrl+B, z.
+prefix_fullscreen = ["ctrl+alt+shift+super+d"]
+
+# Herdr: cycle_pane_previous / cycle_pane_next.
+# TUIOS retains Ctrl+B, p / Shift+Tab and Ctrl+B, n / Tab.
+prefix_prev_window = ["ctrl+alt+shift+super+j"]
+prefix_next_window = ["ctrl+alt+shift+super+k"]
+
+# Herdr: splits.  TUIOS retains Ctrl+B, \\ / | and Ctrl+B, -.
+# The literal TOML string below contains one backslash (no TOML escaping).
+prefix_split_vertical = ['ctrl+alt+shift+super+\']
+prefix_split_horizontal = ["ctrl+alt+shift+super+-"]
+
+# localhost file

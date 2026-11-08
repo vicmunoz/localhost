@@ -1,0 +1,17 @@
+# Herdr-inspired behavior. TUIOS config.toml is intentionally not managed here.
+# The main config.toml takes precedence over config.d when it sets the same key.
+
+[appearance]
+copy_on_select = true  # Already TUIOS's default; kept explicit for parity.
+confirm_quit = true    # Confirm quit. Session killing is handled via the quit menu.
+
+[startup]
+daemon = true
+start_in_terminal_mode = true
+open_default_window = true
+tiled = true
+
+[workspaces]
+new_window_when_empty = true  # Empty numbered workspace behaves more like a tab.
+
+# localhost file

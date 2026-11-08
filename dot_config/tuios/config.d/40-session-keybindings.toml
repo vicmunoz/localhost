@@ -1,0 +1,23 @@
+# Herdr WORKSPACE -> TUIOS SESSION.
+# TUIOS default prefix keys remain unchanged:
+#   Ctrl+B, d detach; Ctrl+B, S session switcher;
+#   Ctrl+B, ( / ) previous / next session; Ctrl+B, q quit menu.
+
+[keybindings.global]
+# Herdr new_workspace: Super+Shift+N.
+new_session = ["super+shift+n"]
+
+# Herdr close_workspace: Super+Shift+D.
+# Open TUIOS quit menu rather than invoking the direct kill-session action.
+prefix_quit = ["super+shift+d"]
+
+# Herdr rename_workspace: Super+Shift+R.
+# TUIOS has no verified one-keystroke rename-current-session binding.
+# Opens session switcher; select a session and press Ctrl+R to rename.
+prefix_session_switcher = ["super+shift+r"]
+
+# Herdr previous_workspace / next_workspace: Hyper+H / Hyper+L.
+prev_session = ["ctrl+alt+shift+super+h"]
+next_session = ["ctrl+alt+shift+super+l"]
+
+# localhost file
