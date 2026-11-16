@@ -1,0 +1,9 @@
+# TUIOS local configuration
+# Managed automatically by TUIOS
+#
+# Custom configuration is loaded automatically from:
+# ~/.config/tuios/config.d/*.toml
+#
+# Settings defined here override those in config.d/.
+#
+# localhost file
