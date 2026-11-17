@@ -5,6 +5,9 @@
 copy_on_select = true  # Already TUIOS's default; kept explicit for parity.
 confirm_quit = true    # Confirm quit. Session killing is handled via the quit menu.
 
+[shell]
+login = true
+
 [startup]
 daemon = true
 start_in_terminal_mode = true
